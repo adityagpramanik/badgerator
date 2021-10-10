@@ -1,4 +1,5 @@
 import 'package:badgerator/create.dart';
+import 'package:badgerator/generate.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,9 +16,12 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Column(
           children: [
+            SizedBox(
+              height: 60,
+            ),
             Text(
               'Badgerator',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 42),
             ),
             SizedBox(
               height: 240,
@@ -54,18 +58,19 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Center(
-                      child: TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Create()));
-                          },
-                          child: Text(
-                            "Generate Badge",
-                            style: TextStyle(color: Colors.black),
-                          )),
-                ),),
+                    child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Generate()));
+                        },
+                        child: Text(
+                          "Generate Badge",
+                          style: TextStyle(color: Colors.black),
+                        )),
+                  ),
+                ),
               ],
             ),
           ],

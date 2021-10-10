@@ -1,3 +1,5 @@
+import 'package:badgerator/create.dart';
+import 'package:badgerator/generate.dart';
 import 'package:badgerator/homePage.dart';
 import 'package:badgerator/template.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -28,26 +30,8 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    final store = FirebaseFirestore.instance;
-    String meve = 'somedata';
-
-    void fetch() async {
-      await store.collection('create').get().then((value) {
-        setState(() {
-          meve = value.docs[0].get('mainEvent');
-          print(meve);
-        });
-      });
-    }
-
-    @override
-    void initState() {
-      super.initState();
-      fetch();
-    }
-
     return MaterialApp(
-      home: HomePage()
+      home: HomePage(),
     );
   }
 }
